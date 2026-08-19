@@ -1,0 +1,43 @@
+You are analyzing a legal document for classification type B2 - Datos.
+
+B2 – Datos
+   - Definition: Determines whether the document promotes access to data, open data policies, or data infrastructure for AI development.
+   - Options:
+       * "Promueve acceso a datos" → The document includes measures to facilitate data access, open data, data sharing, or data infrastructure
+       * "No promueve acceso a datos" → The document does not mention data access, open data, or data infrastructure measures
+   - Decision rule: Look for sections mentioning:
+     - Open data policies ("datos abiertos", "acceso a datos")
+     - Data infrastructure ("infraestructura de datos", "infraestructura digital")
+     - Data sharing mechanisms ("compartir datos", "intercambio de datos")
+     - Public data availability ("datos públicos", "datos de alta calidad")
+     - Data accessibility for research or development
+     If such measures exist → choose "Promueve acceso a datos"
+     If absent → choose "No promueve acceso a datos"
+   - Key indicators: Articles mentioning data access, open data, data infrastructure, data sharing, or public data availability
+ 
+Illustrative mini-examples (derivados de proyectos reales pero redactados de forma genérica):
+   - Ejemplo 1 (ley que fomenta el acceso, similar a una norma brasileña): se ordena a la administración
+     pública “poner a disposición datos públicos de alta calidad, reutilizables y accesibles para el
+     desarrollo de soluciones de IA”, y se crea una “infraestructura de datos” abierta a empresas y academia.
+     → Clasifícalo como **"Promueve acceso a datos"**.
+   - Ejemplo 2 (ley que alienta datos abiertos en un sector específico): para proyectos de IA en salud,
+     la norma exige la publicación de conjuntos de datos anonimizados y la creación de repositorios abiertos
+     para investigación. → Clasifícalo como **"Promueve acceso a datos"**.
+   - Ejemplo 3 (ley general de IA centrada en riesgos y derechos, sin política de datos): el articulado
+     regula definiciones, niveles de riesgo, sanciones y derechos de privacidad, pero no menciona apertura
+     de datos, infraestructuras de datos ni mecanismos de intercambio. → Clasifícalo como
+     **"No promueve acceso a datos"**.
+   - Ejemplo 4 (ley penal o de protección específica, sin dimensión de datos abiertos): la norma sólo crea
+     tipos penales o responsabilidades por determinados usos de IA, sin referirse a acceso o apertura de
+     datos. → Clasifícalo como **"No promueve acceso a datos"**.
+
+Document Text:
+{{ document_text }}
+
+Based on the above taxonomy, analyze the document and classify it as either "Promueve acceso a datos" or "No promueve acceso a datos". 
+
+Your output format should be:
+1. First line: Just the clean answer (e.g., "Promueve acceso a datos" or "No promueve acceso a datos")
+2. Then "_____" to separate
+3. Then a detailed description explaining why it is classified as such, including relevant article references and specific data access measures mentioned.
+

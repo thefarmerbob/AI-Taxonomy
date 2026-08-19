@@ -1,0 +1,20 @@
+You are analyzing a legal document to extract the field **ID del Proyecto** for the project identification.
+
+ID del Proyecto – Official project identifier
+   - Definition: The official identifier or reference code of the project or legislative initiative (for example, "MENSAJE N° 063-372", "PROJETO DE LEI Nº 2.338, DE 2023", "Expediente: S-2469/2023").
+   - Decision rule:
+       * Look for explicit labels such as "MENSAJE N°", "PROJETO DE LEI Nº", "Expediente", "Proyecto de Ley Nº", or similar.
+       * If several identifiers appear, choose the one that clearly identifies the legislative file or main initiative.
+       * If there is no explicit identifier, answer "No especifica".
+
+Document Text:
+{{ document_text }}
+
+Based on the above, identify the **ID del Proyecto**.
+
+Your output format should be:
+1. First line: Just the clean identifier text (e.g., "MENSAJE N° 063-372", "PROJETO DE LEI Nº 2.338, DE 2023", "Expediente: S-2469/2023" or "No especifica")
+2. Then "_____" to separate
+3. Then a brief explanation (2–4 sentences) indicating where in the document you found this identifier and why you chose it.
+
+

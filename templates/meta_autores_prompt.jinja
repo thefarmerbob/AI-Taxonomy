@@ -1,0 +1,21 @@
+You are analyzing a legal document to extract the field **Autor/a/es** for the project identification.
+
+Autor/a/es – Proposers or authors of the project
+   - Definition: The main individuals or institutions that propose, sign, or are formally responsible for the project (for example, "República de Chile - Ministerio Secretaría General de la Presidencia", "Senador Eduardo Gomes", "Diputado Maximiliano Ferraro").
+   - Decision rule:
+       * Look for the names of sponsoring legislators, ministries, or other authorities in the header, signature block, or introduction.
+       * Include both persons and institutions if both are clearly part of the authorship.
+       * If there are several authors, list them separated by semicolons.
+       * If authorship is not clearly specified, answer "No especifica".
+
+Document Text:
+{{ document_text }}
+
+Based on the above, identify the **Autor/a/es** of the project.
+
+Your output format should be:
+1. First line: A concise list of authors and/or institutions separated by semicolons (e.g., "República de Chile - Ministerio Secretaría General de la Presidencia; Senador Eduardo Gomes") or "No especifica".
+2. Then "_____" to separate
+3. Then a brief explanation (2–3 sentences) indicating where in the document you found these names.
+
+

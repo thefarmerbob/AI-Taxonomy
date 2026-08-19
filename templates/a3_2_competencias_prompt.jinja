@@ -1,0 +1,46 @@
+You are analyzing a legal document for classification type A.3.2 - Competencias.
+
+A.3.2 – Competencias
+   - Definition: Identifies the types of competencies or functions assigned to the regulatory authority.
+   - This is a multi-select classification - the authority may have multiple competencies.
+   - Options (select all that apply):
+       * "De establecimiento de estándares, directrices y registros públicos" → Setting standards, guidelines, and public registries
+       * "De supervisión y cumplimiento" → Supervision and compliance monitoring
+       * "De promoción para la adopción y la comprensión de la IA" → Promotion of AI adoption and understanding
+       * "De coordinación institucional y/o internacional" → Institutional and/or international coordination
+       * "De licenciamiento y autorización" → Licensing and authorization
+   - Decision rule: Identify all functions, competencies, or responsibilities assigned to the authority. Look for sections describing:
+     - Authority functions ("funciones", "competencias", "atribuciones")
+     - What the authority can do ("podrá", "deberá", "tendrá a cargo")
+     - Specific activities like setting standards, supervising, promoting, coordinating, or licensing
+   - Format: List all applicable competencies separated by commas.
+ 
+Illustrative mini-examples (derivados de cuatro proyectos reales pero redactados de forma genérica):
+   - Ejemplo 1 (autoridad con funciones mixtas, similar a una ley chilena): el Ministerio y la Agencia deben
+     dictar directrices técnicas, mantener registros públicos de sistemas de alto riesgo, supervisar el
+     cumplimiento y emitir materiales de orientación para operadores de IA. → Salida:
+     **"De establecimiento de estándares, directrices y registros públicos, De supervisión y cumplimiento, De promoción para la adopción y la comprensión de la IA"**.
+   - Ejemplo 2 (autoridad coordinadora en red, similar a una ley brasileña): la autoridad coordinadora del
+     sistema de IA debe armonizar la actuación de reguladores sectoriales, participar en foros internacionales
+     y supervisar el cumplimiento de principios y reglas generales. → Salida:
+     **"De supervisión y cumplimiento, De coordinación institucional y/o internacional, De establecimiento de estándares, directrices y registros públicos"**.
+   - Ejemplo 3 (autoridad fuerte y versátil, similar a una nueva autoridad argentina): el organismo de
+     supervisión de IA tiene a su cargo dictar estándares técnicos, supervisar y sancionar, promover la
+     adopción responsable de IA en sectores productivos, coordinarse con otras autoridades y otorgar
+     licencias/autorizaciones para ciertos usos de alto riesgo. → Salida:
+     **"De establecimiento de estándares, directrices y registros públicos, De supervisión y cumplimiento, De promoción para la adopción y la comprensión de la IA, De coordinación institucional y/o internacional, De licenciamiento y autorización"**.
+   - Ejemplo 4 (ley con autoridad no detallada, similar a otra norma argentina): la ley menciona que “la
+     autoridad de aplicación establecerá las medidas necesarias” pero no enumera funciones concretas ni crea
+     registros, sistemas de supervisión específicos ni esquemas de licenciamiento. → Salida:
+     **"No especifica"**.
+
+Document Text:
+{{ document_text }}
+
+Based on the above taxonomy, analyze the document and identify ALL competencies assigned to the regulatory authority. 
+
+Your output format should be:
+1. First line: Just the clean option names separated by commas (e.g., "De establecimiento de estándares, directrices y registros públicos, De supervisión y cumplimiento" or "De promoción para la adopción y la comprensión de la IA")
+2. Then "_____" to separate
+3. Then a detailed description explaining where each competency is mentioned in the document, including relevant article references.
+

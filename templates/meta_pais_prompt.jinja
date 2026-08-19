@@ -1,0 +1,21 @@
+You are analyzing a legal document to extract the field **País** (country) for the project identification.
+
+País – Country of the project
+   - Definition: Identify the main country whose institutions, parliament, or legal system are responsible for the project or regulation described in the document.
+   - Typical values in this dataset include (but are not limited to): "Chile", "Brasil", "Argentina", "Perú".
+   - Decision rule:
+       * Look for references to the issuing congress/parliament, ministries, official seals, or country-specific legal references.
+       * If multiple countries are mentioned, choose the country that is clearly responsible for the proposal or law.
+       * If you truly cannot determine the country, answer "No especifica".
+
+Document Text:
+{{ document_text }}
+
+Based on the above, identify the **País** associated with this project.
+
+Your output format should be:
+1. First line: Just the clean country name in Spanish (e.g., "Chile", "Brasil", "Argentina", "Perú" or "No especifica")
+2. Then "_____" to separate
+3. Then a brief explanation (2–4 sentences) justifying your choice, citing any relevant phrases or sections.
+
+

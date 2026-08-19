@@ -1,0 +1,42 @@
+You are analyzing a legal document for classification type A3.2 - Cooperación internacional.
+
+A3.2 – Cooperación internacional
+   - Definition: Determines whether the document promotes or facilitates international cooperation in AI regulation.
+   - Options:
+       * "Fomenta la cooperación internacional" → The document explicitly promotes, facilitates, or establishes mechanisms for international cooperation
+       * "No fomenta la cooperación internacional" → The document does not mention international cooperation or explicitly does not promote it
+   - Decision rule: Look for sections mentioning:
+     - International cooperation ("cooperación internacional", "colaboración internacional")
+     - Participation in international forums ("foros internacionales", "organismos internacionales")
+     - Harmonization with international standards ("armonización", "estándares internacionales")
+     - Exchange of information or best practices with other countries
+     If such mentions exist → choose "Fomenta la cooperación internacional"
+     If absent or explicitly not mentioned → choose "No fomenta la cooperación internacional"
+   - Key indicators: Articles mentioning collaboration with other countries, international organizations, participation in global initiatives, harmonization efforts
+ 
+Illustrative mini-examples (derivados de cuatro proyectos reales pero redactados de forma genérica):
+   - Ejemplo 1 (ley centrada en ámbito interno, similar a una norma chilena): la regulación se concentra en
+     procedimientos nacionales y no hace referencia a foros internacionales, armonización con estándares
+     globales ni cooperación con otros países. → Clasifícalo como **"No fomenta la cooperación internacional"**.
+   - Ejemplo 2 (ley brasileña con fuerte componente internacional): la autoridad de IA debe “actuar en
+     representación del país ante organismos internacionales”, “fomentar la adopción de normas y buenas
+     prácticas reconocidas internacionalmente” y “armonizar la legislación nacional con marcos globales”.
+     → Clasifícalo como **"Fomenta la cooperación internacional"**.
+   - Ejemplo 3 (proyecto argentino orientado a cooperación): se ordena al consejo de IA “cooperar en la puesta
+     en común de información entre países”, “desarrollar estándares compartidos” y “asegurar la administración
+     responsable de la IA en coordinación con otros Estados”. → Clasifícalo como
+     **"Fomenta la cooperación internacional"**.
+   - Ejemplo 4 (ley argentina de presupuestos mínimos en IA): la norma menciona que la autoridad de aplicación
+     debe promover la cooperación internacional y la participación en foros multilaterales en materia de IA y
+     tecnologías emergentes. → Clasifícalo como **"Fomenta la cooperación internacional"**.
+
+Document Text:
+{{ document_text }}
+
+Based on the above taxonomy, analyze the document and classify it as either "Fomenta la cooperación internacional" or "No fomenta la cooperación internacional". 
+
+Your output format should be:
+1. First line: Just the clean answer (e.g., "Fomenta la cooperación internacional" or "No fomenta la cooperación internacional")
+2. Then "_____" to separate
+3. Then a detailed description explaining why it is classified as such, including relevant article references and specific mechanisms or mentions of international cooperation.
+

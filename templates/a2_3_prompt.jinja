@@ -1,0 +1,59 @@
+You are analyzing a legal document for classification type A2.3 - Procedimientos específicos de regulación.
+
+A2.3 – Procedimientos específicos de regulación
+   - Definition: Identifies which specific regulatory procedures or mechanisms are established in the document.
+   - This is a multi-select classification - the document may include multiple procedures.
+   - Options (select all that apply):
+       * "Matriz de riesgo" → Risk classification matrix or risk-based approach
+       * "Espacios controlados de experimentación 'sandboxes'" → Regulatory sandboxes for testing
+       * "Sistema de auditorías e inspecciones" → Audit and inspection systems
+       * "Creación de requisitos de certificación y licencias, notificación y respuesta a incidentes" → Certification, licensing, and incident reporting requirements
+       * "Registro de responsables, creadores y proveedores de IA" → Registry of AI developers, creators, and providers
+       * "Mecanismos de responsabilidad para las organizaciones y desarrolladores de IA" → Liability mechanisms for organizations and developers
+       * "Comités de ética y/o juntas asesoras para el uso ético de la IA" → Ethics committees or advisory boards
+       * "Protección de denunciantes que expongan prácticas no éticas de desarrollo de IA" → Whistleblower protection
+       * "Creación de un registro algorítmico de IA en la órbita del sector público" → Algorithmic registry in the public sector
+       * "Otro" → Other regulatory procedures not listed above
+   - Decision rule: Identify all regulatory procedures mentioned in the document. Look for:
+     - Risk classification systems
+     - Sandbox or testing environments
+     - Audit requirements
+     - Certification or licensing processes
+     - Registration systems
+     - Liability frameworks
+     - Ethics committees
+     - Whistleblower protections
+     - Public sector registries
+   - Format: List all applicable options separated by commas.
+ 
+Illustrative mini-examples (derivados de cuatro proyectos reales pero redactados de forma genérica):
+   - Ejemplo 1 (ley chilena con enfoque de riesgo y sandboxes): la norma clasifica los sistemas de IA por
+     niveles de riesgo (inaceptable, alto, limitado, sin riesgo evidente), crea un registro de responsables y
+     proveedores de IA, prevé mecanismos de responsabilidad frente a daños y habilita “espacios controlados de
+     pruebas” o sandboxes regidos por la autoridad. → Salida:
+     **"Matriz de riesgo, Registro de responsables, creadores y proveedores de IA, Mecanismos de responsabilidad para las organizaciones y desarrolladores de IA, Espacios controlados de experimentación 'sandboxes', Otro"**.
+   - Ejemplo 2 (ley brasileña con fuerte aparato de gobernanza): el texto establece una matriz de riesgo,
+     crea sandboxes regulatorios, prevé sistemas de auditorías e inspecciones, introduce requisitos de
+     certificación y licencias, notificación y respuesta a incidentes, registro de responsables y mecanismos de
+     protección para denunciantes de prácticas no éticas. → Salida:
+     **"Matriz de riesgo, Espacios controlados de experimentación 'sandboxes', Sistema de auditorías e inspecciones, Creación de requisitos de certificación y licencias, notificación y respuesta a incidentes, Registro de responsables, creadores y proveedores de IA, Protección de denunciantes que expongan prácticas no éticas de desarrollo de IA, Otro"**.
+   - Ejemplo 3 (proyecto argentino de responsabilidad algorítmica en el sector público): se prevé una matriz
+     de riesgo, la creación de un registro algorítmico en el ámbito de la administración pública, requisitos de
+     certificación y notificación de incidentes y un registro de responsables y desarrolladores. → Salida:
+     **"Matriz de riesgo, Creación de un registro algorítmico de IA en la órbita del sector público, Creación de requisitos de certificación y licencias, notificación y respuesta a incidentes, Registro de responsables, creadores y proveedores de IA"**.
+   - Ejemplo 4 (ley argentina de presupuestos mínimos en IA): el texto pone el foco en la creación de
+     requisitos de certificación y licencias y en establecer mecanismos claros de responsabilidad civil y
+     administrativa para organizaciones y desarrolladores de IA, sin crear matrices de riesgo ni sandboxes.
+     → Salida:
+     **"Creación de requisitos de certificación y licencias, notificación y respuesta a incidentes, Mecanismos de responsabilidad para las organizaciones y desarrolladores de IA"**.
+
+Document Text:
+{{ document_text }}
+
+Based on the above taxonomy, analyze the document and identify ALL regulatory procedures mentioned. 
+
+Your output format should be:
+1. First line: Just the clean option names separated by commas (e.g., "Matriz de riesgo, Espacios controlados de experimentación 'sandboxes'" or "Sistema de auditorías e inspecciones")
+2. Then "_____" to separate
+3. Then a detailed description explaining where each procedure is mentioned in the document, including relevant article references.
+

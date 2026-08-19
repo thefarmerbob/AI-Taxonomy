@@ -1,0 +1,43 @@
+You are analyzing a legal document for classification type C4.2 - Evaluaciones de impacto ambiental.
+
+C4.2 – Evaluaciones de impacto ambiental
+   - Definition: Determines whether the document requires or considers environmental impact assessments for AI systems.
+   - Options:
+       * "Considera los riesgos ambientales de desarrollo o uso de la IA y/o establece la necesidad de realizar evaluaciones de impacto" → The document mentions environmental risks or requires environmental impact assessments
+       * "No incluye evaluaciones de impacto" → The document does not mention environmental impact assessments or environmental risks
+   - Decision rule: Look for sections mentioning:
+     - Environmental impact assessments ("evaluaciones de impacto ambiental", "evaluación de impacto")
+     - Environmental risks ("riesgos ambientales", "impacto ambiental")
+     - Environmental considerations ("consideraciones ambientales", "efectos ambientales")
+     - Long-term environmental effects ("efectos a largo plazo en el medio ambiente")
+     - Environmental protection requirements
+     If such mentions exist → choose "Considera los riesgos ambientales de desarrollo o uso de la IA y/o establece la necesidad de realizar evaluaciones de impacto"
+     If absent → choose "No incluye evaluaciones de impacto"
+   - Key indicators: Articles mentioning environmental impact assessments, environmental risks, environmental considerations, or long-term environmental effects
+ 
+Illustrative mini-examples (derivados de proyectos reales pero redactados de forma genérica):
+   - Ejemplo 1 (ley que exige evaluaciones de impacto ambiental para IA): se requiere que, antes de desplegar
+     ciertos sistemas de IA de alto impacto, los responsables realicen una “evaluación de impacto ambiental y
+     social” que considere el consumo energético, la huella de carbono y efectos sobre ecosistemas. → Clasifícalo
+     como **"Considera los riesgos ambientales de desarrollo o uso de la IA y/o establece la necesidad de realizar evaluaciones de impacto"**.
+   - Ejemplo 2 (ley que menciona riesgos ambientales pero sin obligación clara de evaluación): el texto indica
+     que los responsables deben “revisar los efectos a largo plazo de los sistemas de IA sobre el medio
+     ambiente”, sin detallar un procedimiento formal de evaluación. → También puede clasificarse como
+     **"Considera los riesgos ambientales de desarrollo o uso de la IA y/o establece la necesidad de realizar evaluaciones de impacto"**, explicando la interpretación.
+   - Ejemplo 3 (ley general de IA sin referencia al medio ambiente): la norma se centra en derechos humanos,
+     riesgos, sanciones y gobernanza, pero nunca menciona impacto ambiental, huella de carbono ni evaluaciones
+     de impacto. → Clasifícalo como **"No incluye evaluaciones de impacto"**.
+   - Ejemplo 4 (proyecto penal sobre contenidos generados por IA): el articulado sólo tipifica delitos ligados
+     a imágenes sintéticas o violencia digital, sin relación con medio ambiente. → Clasifícalo como
+     **"No incluye evaluaciones de impacto"**.
+
+Document Text:
+{{ document_text }}
+
+Based on the above taxonomy, analyze the document and classify it as either "Considera los riesgos ambientales de desarrollo o uso de la IA y/o establece la necesidad de realizar evaluaciones de impacto" or "No incluye evaluaciones de impacto". 
+
+Your output format should be:
+1. First line: Just the clean answer (e.g., "Considera los riesgos ambientales de desarrollo o uso de la IA y/o establece la necesidad de realizar evaluaciones de impacto" or "No incluye evaluaciones de impacto")
+2. Then "_____" to separate
+3. Then a detailed description explaining why it is classified as such, including relevant article references and specific environmental assessment requirements mentioned.
+

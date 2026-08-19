@@ -1,0 +1,43 @@
+You are analyzing a legal document for classification type C2.1 - Uso para la gestión interna y modernización del Estado.
+
+C2.1 – Uso para la gestión interna y modernización del Estado
+   - Definition: Determines whether the document promotes the use of AI for improving public administration and modernizing the state.
+   - Options:
+       * "Promueve la mejora de gestión/Modernización" → The document includes measures to use AI for public administration improvement, digitalization, or state modernization
+       * "No promueve la mejora o modernizacion del Estado" → The document does not mention using AI for public administration or state modernization
+   - Decision rule: Look for sections mentioning:
+     - Public administration improvement ("mejora de la gestión", "modernización del Estado")
+     - Digitalization of government ("digitalización", "gobierno digital", "transformación digital")
+     - Efficiency in public services ("eficiencia en servicios públicos", "mejora de servicios")
+     - Automation of government processes ("automatización de procesos", "procesos del Estado")
+     - Use of AI in public sector ("uso de IA en el sector público", "aplicaciones en el Estado")
+     If such measures exist → choose "Promueve la mejora de gestión/Modernización"
+     If absent → choose "No promueve la mejora o modernizacion del Estado"
+   - Key indicators: Articles mentioning government modernization, digitalization, public administration improvement, or use of AI in public services
+ 
+Illustrative mini-examples (derivados de proyectos reales pero redactados de forma genérica):
+   - Ejemplo 1 (ley con fuerte foco en modernización, similar a una norma brasileña): el texto habla de
+     “facilitar el uso de servicios de gobierno electrónico mediante sistemas de IA”, “mejorar la eficiencia
+     de la administración pública” y “automatizar procesos administrativos” en todos los niveles del Estado.
+     → Clasifícalo como **"Promueve la mejora de gestión/Modernización"**.
+   - Ejemplo 2 (proyecto argentino que menciona transformación digital del sector público): se dispone que las
+     aplicaciones de IA en el poder público deben “promover la facilidad de uso de los servicios de gobierno”
+     y “contribuir a la modernización del Estado y sus procesos”. → Clasifícalo como
+     **"Promueve la mejora de gestión/Modernización"**.
+   - Ejemplo 3 (ley general de IA que sólo regula actores privados): la norma se centra en obligaciones de
+     proveedores y empresas, sin mencionar la digitalización de la administración pública ni mejoras de gestión
+     interna. → Clasifícalo como **"No promueve la mejora o modernizacion del Estado"**.
+   - Ejemplo 4 (proyecto penal o de consumo): el articulado modifica el código penal o la ley de defensa del
+     consumidor para cubrir ciertos usos de IA, sin hablar de gestión interna del Estado. → Clasifícalo como
+     **"No promueve la mejora o modernizacion del Estado"**.
+
+Document Text:
+{{ document_text }}
+
+Based on the above taxonomy, analyze the document and classify it as either "Promueve la mejora de gestión/Modernización" or "No promueve la mejora o modernizacion del Estado". 
+
+Your output format should be:
+1. First line: Just the clean answer (e.g., "Promueve la mejora de gestión/Modernización" or "No promueve la mejora o modernizacion del Estado")
+2. Then "_____" to separate
+3. Then a detailed description explaining why it is classified as such, including relevant article references and specific modernization measures mentioned.
+

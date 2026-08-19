@@ -1,0 +1,43 @@
+You are analyzing a legal document for classification type Género - Gender considerations.
+
+Género – Gender considerations
+   - Definition: Determines whether the document includes gender-related actions, considerations, or measures.
+   - Options:
+       * "Toma alguna acción de género" → The document includes gender-related measures, gender parity requirements, gender perspectives, or addresses gender discrimination
+       * "No toma ninguna acción de género" → The document does not mention gender-related measures, gender parity, or gender perspectives
+   - Decision rule: Look for sections mentioning:
+     - Gender parity ("paridad de género", "paridad")
+     - Gender perspective ("perspectiva de género", "enfoque de género")
+     - Gender discrimination ("discriminación de género", "discriminación por género")
+     - Gender equality ("igualdad de género")
+     - Gender representation in committees or authorities
+     - Gender-specific protections or considerations
+     - Measures addressing gender bias in AI systems
+     If such mentions exist → choose "Toma alguna acción de género"
+     If absent → choose "No toma ninguna acción de género"
+   - Key indicators: Articles mentioning gender parity, gender perspective, gender discrimination, gender equality, or gender representation in governance structures
+ 
+Illustrative mini-examples (derivados de proyectos reales pero redactados de forma genérica):
+   - Ejemplo 1 (ley que incorpora perspectiva de género): se exige que los comités de supervisión de IA tengan
+     paridad de género, se menciona la “perspectiva de género” como criterio en la evaluación de impactos y se
+     mandata revisar sesgos de género en los algoritmos. → Clasifícalo como **"Toma alguna acción de género"**.
+   - Ejemplo 2 (proyecto que aborda violencia digital de género): la norma define “violencia digital o telemática”
+     contra mujeres y establece prestaciones específicas de protección y canales de denuncia. → Clasifícalo como
+     **"Toma alguna acción de género"**.
+   - Ejemplo 3 (ley general de IA con lenguaje neutro, sin referencias de género): el texto habla de “personas”,
+     “usuarios” y “ciudadanía” sin mencionar paridad, discriminación de género ni enfoques específicos.
+     → Clasifícalo como **"No toma ninguna acción de género"**.
+   - Ejemplo 4 (ley de responsabilidad algorítmica que sólo considera sesgos en general): se menciona la
+     corrección de sesgos discriminatorios, pero sin referirse explícitamente a género o mujeres como grupo
+     protegido. → Clasifícalo como **"No toma ninguna acción de género"**.
+
+Document Text:
+{{ document_text }}
+
+Based on the above taxonomy, analyze the document and classify it as either "Toma alguna acción de género" or "No toma ninguna acción de género". 
+
+Your output format should be:
+1. First line: Just the clean answer (e.g., "Toma alguna acción de género" or "No toma ninguna acción de género")
+2. Then "_____" to separate
+3. Then a detailed description explaining why it is classified as such, including relevant article references and specific gender-related measures mentioned.
+

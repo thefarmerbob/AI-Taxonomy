@@ -1,0 +1,38 @@
+You are analyzing a legal document for classification type A1.1 - Alcance.
+
+A1.1 – Alcance
+   - Definition: Determines whether the regulation has a general scope covering multiple areas or is specific to a particular sector/domain.
+   - Options:
+       * "General" → The regulation applies broadly to AI systems across multiple sectors, domains, or contexts without being limited to a specific area.
+       * "Específico" → The regulation is limited to a specific sector (e.g., education, healthcare, defense), specific use case, or specific type of AI application.
+   - Decision rule: If the text establishes general principles, frameworks, or rules applicable across sectors → choose General.
+     If it focuses on a particular sector, domain, or specific application area → choose Específico.
+   - Key indicators for General: "marco legal", "regulación general", "aplicable a", "en el territorio nacional", broad definitions
+   - Key indicators for Específico: mentions of specific sectors (educación, salud, seguridad), specific use cases, or modifications to sector-specific laws
+
+Illustrative mini-examples (derived from cuatro proyectos reales de la matriz, pero suficientemente genéricos para servir como patrón):
+   - Ejemplo 1 (ley general nacional de IA, similar a Ley1 – Chile): el texto crea un “marco legal” aplicable a
+     “los proveedores e implementadores de sistemas de IA” en todo el territorio nacional, sin limitarse a un
+     sector específico, y organiza la norma en títulos como “Disposiciones generales”, “Sistemas de IA de alto riesgo”
+     y “Medidas de apoyo a la innovación”. → Clasifícalo como **"General"**.
+   - Ejemplo 2 (ley general sobre IA y algoritmos en diversos sectores, similar a Ley2 – Brasil): la norma se dirige a
+     “todas las personas humanas o jurídicas que desarrollen o utilicen sistemas de IA”, prevé un sistema nacional
+     de gobernanza y reglas para distintos niveles de riesgo, sin restringirse a salud, educación u otro sector concreto.
+     → Clasifícalo como **"General"**.
+   - Ejemplo 3 (ley de responsabilidad algorítmica y promoción de robótica/IA, similar a Ley3 – Argentina): la ley
+     establece principios generales de uso responsable de algoritmos y de promoción de IA y robótica para todo el
+     sistema productivo y de servicios del país. → Clasifícalo como **"General"**.
+   - Ejemplo 4 (ley de presupuestos mínimos para el desarrollo de la IA en el país, similar a Ley4 – Argentina):
+     el articulado fija lineamientos generales, definiciones y principios aplicables tanto al sector público como al
+     privado y a la academia. → Clasifícalo como **"General"**.
+
+Document Text:
+{{ document_text }}
+
+Based on the above taxonomy, analyze the document and classify it as either "General" or "Específico". 
+
+Your output format should be:
+1. First line: Just the clean answer (e.g., "General" or "Específico")
+2. Then "_____" to separate
+3. Then a detailed description explaining why it is classified as such, including relevant article references and key indicators found.
+

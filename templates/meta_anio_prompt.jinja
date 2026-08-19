@@ -1,0 +1,21 @@
+You are analyzing a legal document to extract the field **Año** (year) for the project identification.
+
+Año – Year of the project or initiative
+   - Definition: The calendar year in which the project, proposal, or law is dated (e.g., 2023, 2024).
+   - Decision rule:
+       * Look for dates in the header, preamble, or at the end of the document (e.g., "2024", "En el año 2023", dated signatures).
+       * Choose the year that clearly corresponds to the issuance, presentation, or main date of the project.
+       * If several years appear (for example, references to other laws), prefer the year explicitly associated with the project itself.
+       * If you cannot identify a clear year, answer "No especifica".
+
+Document Text:
+{{ document_text }}
+
+Based on the above, identify the **Año** of the project.
+
+Your output format should be:
+1. First line: Just the year as four digits (e.g., "2023", "2024") or "No especifica".
+2. Then "_____" to separate
+3. Then a brief explanation (2–3 sentences) indicating where you found this year and why you selected it.
+
+

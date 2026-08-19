@@ -1,0 +1,45 @@
+You are analyzing a legal document for classification type A3.3 - Participación de partes interesadas.
+
+A3.3 – Participación de partes interesadas
+   - Definition: Determines whether the document promotes stakeholder participation in AI governance.
+   - Options:
+       * "Promueve la participación de partes interesadas" → The document establishes mechanisms, committees, or processes for stakeholder participation
+       * "No promueve la participación de partes interesadas" → The document does not mention stakeholder participation or explicitly excludes it
+   - Decision rule: Look for sections mentioning:
+     - Advisory committees or councils ("consejos asesores", "comités consultivos")
+     - Stakeholder representation ("representantes de", "participación de")
+     - Multi-sectoral participation (public, private, academic, civil society)
+     - Consultation processes ("consultas", "foros de debate")
+     - Inclusion of various sectors in decision-making
+     If such mechanisms exist → choose "Promueve la participación de partes interesadas"
+     If absent → choose "No promueve la participación de partes interesadas"
+   - Key indicators: Articles creating advisory bodies, mentioning stakeholder representation, consultation processes, or multi-sectoral participation
+ 
+Illustrative mini-examples (derivados de cuatro proyectos reales pero redactados de forma genérica):
+   - Ejemplo 1 (consejo asesor multiactor, similar a una ley chilena): se crea un “Consejo Asesor Técnico de
+     IA” integrado por representantes del sector público, privado, academia y sociedad civil, encargado de
+     asesorar sobre desarrollo y uso responsable de la IA. → Clasifícalo como
+     **"Promueve la participación de partes interesadas"**.
+   - Ejemplo 2 (consejo permanente de cooperación, similar a una ley brasileña): la norma instituye un órgano
+     colegiado que reúne autoridades sectoriales, expertos, empresas y organizaciones sociales para elaborar
+     recomendaciones y coordinar la regulación de IA. → Clasifícalo como
+     **"Promueve la participación de partes interesadas"**.
+   - Ejemplo 3 (consejo asesor ad honorem, similar a una ley argentina de responsabilidad algorítmica): se crea
+     un consejo asesor compuesto por personas provenientes en partes iguales del sector público y del sector
+     privado, con el fin de emitir recomendaciones no vinculantes sobre IA. → Clasifícalo como
+     **"Promueve la participación de partes interesadas"**.
+   - Ejemplo 4 (consejo federal de IA, similar a otro proyecto argentino): la ley crea un consejo federal que
+     agrupa representantes de provincias, universidades, centros de investigación y organismos públicos para
+     mapear iniciativas de IA y coordinar políticas. → Clasifícalo como
+     **"Promueve la participación de partes interesadas"**.
+
+Document Text:
+{{ document_text }}
+
+Based on the above taxonomy, analyze the document and classify it as either "Promueve la participación de partes interesadas" or "No promueve la participación de partes interesadas". 
+
+Your output format should be:
+1. First line: Just the clean answer (e.g., "Promueve la participación de partes interesadas" or "No promueve la participación de partes interesadas")
+2. Then "_____" to separate
+3. Then a detailed description explaining why it is classified as such, including relevant article references and which stakeholders are mentioned.
+

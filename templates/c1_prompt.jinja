@@ -1,0 +1,59 @@
+You are analyzing a legal document for classification type C1 - Derechos Humanos y Libertades Fundamentales.
+
+C1 – Derechos Humanos y Libertades Fundamentales
+   - Definition: Identifies which human rights and fundamental freedoms are protected or addressed in the AI regulation.
+   - This is a multi-select classification - the document may address multiple rights.
+   - Options (select all that apply):
+       * "Privacidad" → Privacy rights and data protection
+       * "Transparencia" → Transparency and explainability requirements
+       * "No discriminación" → Non-discrimination and fairness
+       * "Seguridad" → Security and safety protections
+       * "Supervisión Humana" → Human oversight and control
+       * "Trabajo y Condiciones laborales" → Labor rights and working conditions
+       * "Defensa del Consumidor y Libre Competencia" → Consumer protection and free competition
+       * "Acceso a la información" → Access to information rights
+       * "Otro" → Other human rights or fundamental freedoms not listed above
+   - Decision rule: Identify all human rights and fundamental freedoms mentioned or protected. Look for:
+     - Privacy and data protection principles
+     - Transparency and explainability requirements
+     - Non-discrimination clauses
+     - Security measures
+     - Human oversight mechanisms
+     - Labor protections
+     - Consumer rights
+     - Information access rights
+     - Other fundamental rights
+   - Format: List all applicable rights separated by commas. If "Otro" is selected, specify what other right is mentioned.
+ 
+Illustrative mini-examples (derivados de proyectos reales pero redactados de forma genérica):
+   - Ejemplo 1 (ley centrada en privacidad, transparencia y no discriminación): el articulado recoge como
+     principios “la protección de datos personales y la autodeterminación informativa”, exige transparencia
+     en el funcionamiento de los sistemas de IA y prohíbe la discriminación injustificada en decisiones
+     automatizadas. → Salida:
+     **"Privacidad, Transparencia, No discriminación"** (si además prevé mecanismos de supervisión humana,
+     añade también **"Supervisión Humana"**).
+   - Ejemplo 2 (ley que incluye trabajo y defensa del consumidor, similar a una norma brasileña): el texto
+     dedica un capítulo a los efectos de IA en el trabajo y las condiciones laborales (reentrenamiento,
+     negociación colectiva), protege a consumidores frente a decisiones algorítmicas y menciona seguridad y
+     supervisión humana. → Salida:
+     **"Privacidad, No discriminación, Trabajo y Condiciones laborales, Transparencia, Seguridad, Supervisión Humana, Defensa del Consumidor y Libre Competencia"**.
+   - Ejemplo 3 (ley de responsabilidad algorítmica, similar a un proyecto argentino): se centra en
+     transparencia, seguridad y privacidad, incorpora no discriminación y menciona otros derechos como
+     “libertad y autonomía” sin estar en la lista base. → Salida:
+     **"Transparencia, Seguridad, Privacidad, No discriminación, Otro"** (explicando que “Otro” corresponde a
+     libertad/autonomía).
+   - Ejemplo 4 (ley mínima que sólo protege datos y transparencia): la norma menciona la obligación de proteger
+     datos personales y de informar a las personas cuando interactúan con sistemas de IA, sin entrar en trabajo,
+     consumidor u otros derechos. → Salida:
+     **"Privacidad, Transparencia"**.
+
+Document Text:
+{{ document_text }}
+
+Based on the above taxonomy, analyze the document and identify ALL human rights and fundamental freedoms addressed. 
+
+Your output format should be:
+1. First line: Just the clean option names separated by commas (e.g., "Privacidad, Transparencia, No discriminación" or "Seguridad, Supervisión Humana")
+2. Then "_____" to separate
+3. Then a detailed description explaining where each right is mentioned in the document, including relevant article references.
+

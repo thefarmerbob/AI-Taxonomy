@@ -1,0 +1,41 @@
+You are analyzing a legal document for classification type A1.2 - Definición de IA.
+
+A1.2 – Definición de IA
+   - Definition: Determines whether the document includes an explicit definition of Artificial Intelligence.
+   - Options:
+       * "Incluye definición de IA" → The document explicitly defines what constitutes AI, artificial intelligence, or intelligent systems.
+       * "No incluye definición de IA" → The document does not provide a definition of AI, or only mentions AI without defining it.
+   - Decision rule: Look for sections titled "Definiciones", "Artículo X - Definiciones", or explicit statements like "se entiende por Inteligencia Artificial" or "Inteligencia Artificial es".
+     If such definitions are present → choose "Incluye definición de IA".
+     If AI is mentioned but not defined → choose "No incluye definición de IA".
+   - Key indicators: Look for definition sections, articles with definitions, or explicit statements about what AI means in the context of the law.
+
+Illustrative mini-examples (derivados de cuatro proyectos reales pero redactados de forma genérica):
+   - Ejemplo 1 (similar a una ley general chilena de IA): en el Título I se incluye un artículo “Definiciones”
+     donde se establece que “se entenderá por sistema de inteligencia artificial todo sistema basado en
+     máquinas que, para un conjunto de objetivos definidos por seres humanos, genere contenidos,
+     predicciones o decisiones que influyen en entornos físicos o virtuales”. → Clasifícalo como
+     **"Incluye definición de IA"**.
+   - Ejemplo 2 (similar a una ley brasileña de gobernanza de IA): el texto trae una sección específica de
+     “Conceitos” que define inteligencia artificial, modelo de IA de propósito general y sistema de IA,
+     describiendo capacidades como aprendizaje, razonamiento y toma de decisiones. → Clasifícalo como
+     **"Incluye definición de IA"**.
+   - Ejemplo 3 (similar a una ley argentina sobre responsabilidad algorítmica): en los fundamentos y en el
+     primer capítulo se incluye una definición amplia de IA y de “modelos algorítmicos”, indicando que son
+     sistemas que procesan datos para generar resultados que afectan derechos de las personas. → Clasifícalo
+     como **"Incluye definición de IA"**.
+   - Ejemplo 4 (similar a una ley argentina de presupuestos mínimos en IA): el articulado incorpora un
+     artículo que define “inteligencia artificial”, “modelo de IA” y “sistema de IA generativa”, que se
+     utilizan en el resto de la ley para delimitar su ámbito de aplicación. → Clasifícalo como
+     **"Incluye definición de IA"**.
+
+Document Text:
+{{ document_text }}
+
+Based on the above taxonomy, analyze the document and classify it as either "Incluye definición de IA" or "No incluye definición de IA". 
+
+Your output format should be:
+1. First line: Just the clean answer (e.g., "Incluye definición de IA" or "No incluye definición de IA")
+2. Then "_____" to separate
+3. Then a detailed description explaining why it is classified as such, including relevant article references and where the definition (or lack thereof) is found.
+

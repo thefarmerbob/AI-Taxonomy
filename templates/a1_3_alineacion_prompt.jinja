@@ -1,0 +1,46 @@
+You are analyzing a legal document for classification type A.1.3 - Alineación con definiciones operativas en documentos internacionales.
+
+A.1.3 – Alineación con definiciones operativas en documentos internacionales
+   - Definition: Determines whether the AI definition in the document aligns with definitions from major international organizations or frameworks.
+   - Options:
+       * "Se alinea con la definición de la OCDE" → The definition aligns with OECD's definition of AI
+       * "Se alinea con la definición de la UNESCO" → The definition aligns with UNESCO's definition of AI
+       * "Se alinea con la definición de la Ley Europea" → The definition aligns with the EU AI Act definition
+       * "Otro" → The definition does not align with the above or uses a different definition
+   - Decision rule: Compare the document's AI definition with known international definitions:
+     - OECD: Systems that can, for a given set of human-defined objectives, make predictions, recommendations, or decisions influencing real or virtual environments
+     - UNESCO: Systems with capabilities such as reasoning, learning, and decision-making
+     - EU AI Act: Machine-based systems designed to operate with varying levels of autonomy
+     If the definition closely matches one of these → choose the corresponding alignment.
+     If it differs significantly or is unique → choose "Otro".
+   - Key indicators: Look for definitions that mention "sistemas basados en máquinas", "autonomía", "aprendizaje", "predicciones", "decisiones", "entornos físicos o virtuales"
+ 
+Illustrative mini-examples (derivados de cuatro proyectos reales pero redactados de forma genérica):
+   - Ejemplo 1 (definición funcional pero no alineada explícitamente, similar a una ley chilena): la ley define
+     IA como “tecnologías destinadas a procesar grandes volúmenes de datos para apoyar la toma de decisiones
+     de autoridades y particulares”, sin mencionar autonomía, aprendizaje ni otros rasgos típicos de OCDE/UNESCO.
+     → Clasifícalo como **"Otro"**.
+   - Ejemplo 2 (definición amplia sin referencia clara a estándares, similar a una ley brasileña): IA se describe
+     como “sistemas informáticos avanzados que simulan capacidades humanas”, sin detallar que, para objetivos
+     definidos por humanos, generan predicciones o decisiones que influyen en entornos. → Clasifícalo como
+     **"Otro"**.
+   - Ejemplo 3 (definición centrada en derechos y responsabilidad, similar a una ley argentina de
+     responsabilidad algorítmica): la norma se enfoca en el impacto de los algoritmos sobre derechos y en la
+     obligación de transparencia, sin especificar explícitamente los elementos de la definición OCDE/UNESCO.
+     → Clasifícalo como **"Otro"**.
+   - Ejemplo 4 (definición muy próxima a OCDE/UNESCO, similar a una ley argentina de presupuestos mínimos):
+     IA se define como “sistema de inteligencia artificial: software desarrollado con una o varias técnicas que,
+     para objetivos definidos por seres humanos, genera contenidos, predicciones, recomendaciones o decisiones
+     que influyen en el entorno”, y menciona capacidades de aprendizaje y razonamiento. → Clasifícalo como
+     **"Se alinea con la definición de la OCDE"** y **"Se alinea con la definición de la UNESCO"**.
+
+Document Text:
+{{ document_text }}
+
+Based on the above taxonomy, analyze the document and classify it as either "Se alinea con la definición de la OCDE", "Se alinea con la definición de la UNESCO", "Se alinea con la definición de la Ley Europea", or "Otro". 
+
+Your output format should be:
+1. First line: Just the clean answer (e.g., "Se alinea con la definición de la OCDE" or "Otro")
+2. Then "_____" to separate
+3. Then a detailed description explaining why it is classified as such, including the actual definition found in the document and how it compares to international definitions.
+

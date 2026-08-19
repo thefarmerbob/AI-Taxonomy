@@ -1,0 +1,20 @@
+You are analyzing a legal document to extract the field **Título del Proyecto** for the project identification.
+
+Título del Proyecto – Official project title
+   - Definition: The official name or title of the legislative project, law, or initiative (for example, "Proyecto de Ley de Inteligencia Artificial", "RESPONSABILIDAD ALGORÍTMICA Y PROMOCIÓN DE LA ROBÓTICA, ALGORITMOS VERDES E INTELIGENCIA ARTIFICIAL EN LA REPÚBLICA ARGENTINA.").
+   - Decision rule:
+       * Look for the formal title near the beginning of the document, usually in headings, first articles, or cover pages.
+       * Prefer the most complete and formal title, not abbreviations.
+       * If no clear title is present, synthesize a concise descriptive title based on the content and mark it clearly as inferred (e.g., start with "Título inferido: ...").
+
+Document Text:
+{{ document_text }}
+
+Based on the above, identify the **Título del Proyecto**.
+
+Your output format should be:
+1. First line: Just the clean title text (either the official title or, if necessary, a clearly marked inferred title).
+2. Then "_____" to separate
+3. Then a brief explanation (2–4 sentences) indicating where you found the title or how you inferred it.
+
+

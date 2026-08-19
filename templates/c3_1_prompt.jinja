@@ -1,0 +1,44 @@
+You are analyzing a legal document for classification type C3.1 - Desarrollo Productivo.
+
+C3.1 – Desarrollo Productivo
+   - Definition: Determines whether the document incentivizes the adoption of AI in businesses and productive sectors.
+   - Options:
+       * "Incentiva adopción de IA en empresas" → The document includes measures to promote, incentivize, or facilitate AI adoption in businesses
+       * "No incentiva adopción de IA en empresas" → The document does not mention incentives or measures to promote AI adoption in businesses
+   - Decision rule: Look for sections mentioning:
+     - Business incentives ("incentivos", "estímulos", "facilitar")
+     - AI adoption in companies ("adopción de IA en empresas", "implementación en empresas")
+     - Support for businesses ("apoyo a empresas", "facilitar a empresas")
+     - Public-private partnerships ("alianzas público-privadas")
+     - Programs for business adoption ("programas para empresas", "facilitar implementación")
+     - Support for SMEs ("pequeñas y medianas empresas", "MIPYMES")
+     If such measures exist → choose "Incentiva adopción de IA en empresas"
+     If absent → choose "No incentiva adopción de IA en empresas"
+   - Key indicators: Articles mentioning business incentives, AI adoption programs, support for companies, public-private partnerships, or SME support
+ 
+Illustrative mini-examples (derivados de proyectos reales pero redactados de forma genérica):
+   - Ejemplo 1 (ley que incentiva fuertemente a empresas, similar a una norma chilena): se crean “espacios
+     controlados de pruebas” priorizando la participación de pymes, y se prevé asesoría y apoyo para que
+     empresas adopten sistemas de IA de alto valor agregado. → Clasifícalo como
+     **"Incentiva adopción de IA en empresas"**.
+   - Ejemplo 2 (ley brasileña que promueve innovación): el articulado dispone que la administración pública
+     “incentivará la innovación en los sectores productivos, incluyendo inversión en investigación y desarrollo
+     de IA y financiación de recursos tecnológicos para pequeñas y medianas empresas”. → Clasifícalo como
+     **"Incentiva adopción de IA en empresas"**.
+   - Ejemplo 3 (proyecto argentino de responsabilidad algorítmica): se enfatiza evitar barreras regulatorias a
+     la innovación y se prevé cooperación público-privada para implementar tecnologías de IA en empresas.
+     → Clasifícalo como **"Incentiva adopción de IA en empresas"**.
+   - Ejemplo 4 (ley estrictamente de protección o penal, sin medidas de fomento): la norma prohíbe ciertos usos
+     de IA o crea delitos, pero no contempla programas, incentivos u otros mecanismos para que empresas adopten
+     IA. → Clasifícalo como **"No incentiva adopción de IA en empresas"**.
+
+Document Text:
+{{ document_text }}
+
+Based on the above taxonomy, analyze the document and classify it as either "Incentiva adopción de IA en empresas" or "No incentiva adopción de IA en empresas". 
+
+Your output format should be:
+1. First line: Just the clean answer (e.g., "Incentiva adopción de IA en empresas" or "No incentiva adopción de IA en empresas")
+2. Then "_____" to separate
+3. Then a detailed description explaining why it is classified as such, including relevant article references and specific business incentive measures mentioned.
+

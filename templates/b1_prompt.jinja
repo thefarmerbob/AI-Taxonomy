@@ -1,0 +1,43 @@
+You are analyzing a legal document for classification type B1 - Desarrollo de Talentos.
+
+B1 – Desarrollo de Talentos
+   - Definition: Determines whether the document includes policies, programs, or measures for developing AI talent and human capital.
+   - Options:
+       * "Incluye políticas de desarrollo de talento" → The document includes measures for education, training, capacity building, or talent development in AI
+       * "No incluye políticas de desarrollo de talento" → The document does not mention talent development, education, or training programs
+   - Decision rule: Look for sections mentioning:
+     - Education and training programs ("programas de educación", "capacitación", "formación")
+     - Talent development ("desarrollo de talento", "desarrollo de capacidades")
+     - Professional training ("formación profesional", "competencia en IA")
+     - Educational initiatives ("iniciativas educativas", "alfabetización digital")
+     - Collaboration with educational institutions
+     If such measures exist → choose "Incluye políticas de desarrollo de talento"
+     If absent → choose "No incluye políticas de desarrollo de talento"
+   - Key indicators: Articles mentioning education, training, capacity building, professional development, or collaboration with educational institutions
+ 
+Illustrative mini-examples (derivados de proyectos reales pero redactados de forma genérica):
+   - Ejemplo 1 (similar a una ley chilena general de IA): se crea un programa nacional de capacitación en IA
+     para funcionarios públicos y se mandata al Ministerio de Ciencia a “promover la formación de capital
+     humano avanzado en IA” mediante becas y convenios con universidades. → Clasifícalo como
+     **"Incluye políticas de desarrollo de talento"**.
+   - Ejemplo 2 (similar a una ley brasileña): la norma obliga a la administración pública a “implementar
+     programas de formación, educación y calificación en inteligencia artificial” y prevé cursos específicos
+     para trabajadores afectados por automatización. → Clasifícalo como
+     **"Incluye políticas de desarrollo de talento"**.
+   - Ejemplo 3 (similar a una ley argentina de responsabilidad algorítmica): el consejo asesor debe “elaborar
+     planes conjuntos con el Ministerio de Educación para promover la acumulación de capital humano en IA y
+     tecnologías 4.0”. → Clasifícalo como **"Incluye políticas de desarrollo de talento"**.
+   - Ejemplo 4 (ley puramente regulatoria sin mención a formación): el texto solo regula riesgos, sanciones y
+     procedimientos de supervisión de sistemas de IA, sin artículos sobre capacitación, educación o talento.
+     → Clasifícalo como **"No incluye políticas de desarrollo de talento"**.
+
+Document Text:
+{{ document_text }}
+
+Based on the above taxonomy, analyze the document and classify it as either "Incluye políticas de desarrollo de talento" or "No incluye políticas de desarrollo de talento". 
+
+Your output format should be:
+1. First line: Just the clean answer (e.g., "Incluye políticas de desarrollo de talento" or "No incluye políticas de desarrollo de talento")
+2. Then "_____" to separate
+3. Then a detailed description explaining why it is classified as such, including relevant article references and specific programs or measures mentioned.
+

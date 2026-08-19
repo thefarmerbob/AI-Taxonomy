@@ -1,0 +1,42 @@
+You are analyzing a legal document for classification type C.3.2 - Impulso al sistema de I+D relacionado a la IA.
+
+C.3.2 – Impulso al sistema de I+D relacionado a la IA
+   - Definition: Determines whether the document promotes or supports research and development (R&D) systems related to AI.
+   - Options:
+       * "Impulsa el sistema I+D en IA" → The document includes measures to promote, finance, or support AI research and development
+       * "No impulsa el sistema I+D en IA" → The document does not mention measures to promote AI research and development
+   - Decision rule: Look for sections mentioning:
+     - Research and development ("investigación y desarrollo", "I+D", "investigación científica")
+     - R&D funding ("financiamiento de investigación", "apoyo a investigación")
+     - Research programs ("programas de investigación", "proyectos de investigación")
+     - Collaboration with research institutions ("colaboración con centros de investigación", "universidades")
+     - Innovation support ("apoyo a la innovación", "fomento de la innovación")
+     - Investment in R&D ("inversión en investigación")
+     If such measures exist → choose "Impulsa el sistema I+D en IA"
+     If absent → choose "No impulsa el sistema I+D en IA"
+   - Key indicators: Articles mentioning research and development, R&D funding, research programs, collaboration with research institutions, or innovation support
+ 
+Illustrative mini-examples (derivados de proyectos reales pero redactados de forma genérica):
+   - Ejemplo 1 (ley que impulsa I+D en IA, similar a una norma chilena): la ley prevé “medidas de apoyo a la
+     innovación” que incluyen fondos para proyectos de investigación en IA y creación de sandboxes para probar
+     sistemas innovadores antes de su comercialización. → Clasifícalo como **"Impulsa el sistema I+D en IA"**.
+   - Ejemplo 2 (ley brasileña con foco en I+D): el texto obliga al Estado a “financiar recursos físicos y
+     tecnológicos de IA de difícil acceso para pymes y centros de investigación” y a “fomentar la investigación
+     y el desarrollo de sistemas de IA sostenibles”. → Clasifícalo como **"Impulsa el sistema I+D en IA"**.
+   - Ejemplo 3 (proyecto argentino de promoción e I+D): se encomienda a la administración “incentivar la
+     inversión pública y privada en investigación y desarrollo de IA” y se mencionan programas específicos de
+     I+D en universidades y centros tecnológicos. → Clasifícalo como **"Impulsa el sistema I+D en IA"**.
+   - Ejemplo 4 (ley que sólo regula uso y sanciones, sin mencionar investigación): la norma establece
+     obligaciones, sanciones y registros de IA, pero nunca habla de investigación, innovación ni apoyo a I+D.
+     → Clasifícalo como **"No impulsa el sistema I+D en IA"**.
+
+Document Text:
+{{ document_text }}
+
+Based on the above taxonomy, analyze the document and classify it as either "Impulsa el sistema I+D en IA" or "No impulsa el sistema I+D en IA". 
+
+Your output format should be:
+1. First line: Just the clean answer (e.g., "Impulsa el sistema I+D en IA" or "No impulsa el sistema I+D en IA")
+2. Then "_____" to separate
+3. Then a detailed description explaining why it is classified as such, including relevant article references and specific R&D support measures mentioned.
+

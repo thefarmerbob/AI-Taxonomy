@@ -1,0 +1,50 @@
+You are analyzing a legal document for classification type C4.1 - Uso de la IA para la sostenibilidad y la lucha contra el cambio climático.
+
+C4.1 – Uso de la IA para la sostenibilidad y la lucha contra el cambio climático
+   - Definition: Identifies environmental sustainability measures related to AI use or development.
+   - This is a multi-select classification - the document may include multiple environmental measures.
+   - Options (select all that apply):
+       * "Fomenta el uso de energias renovables" → Promotes use of renewable energy for AI infrastructure
+       * "Optimiza el uso de recursos naturales" → Promotes optimization of natural resource use
+       * "Contribuye a la mitigación del cambio climático" → Contributes to climate change mitigation
+       * "Alienta el desarrollo y la aplicación de sistemas de IA que ayuden a reducir las emisiones de carbono" → Encourages AI systems that reduce carbon emissions
+       * "No fomenta el uso de la Ia para la sostenbilidad y la lucha contra el cambio climático" → Does not mention environmental sustainability measures
+   - Decision rule: Look for sections mentioning:
+     - Renewable energy ("energías renovables", "fuentes de energía renovable")
+     - Resource optimization ("optimización de recursos", "uso eficiente de recursos")
+     - Climate change mitigation ("mitigación del cambio climático", "lucha contra el cambio climático")
+     - Carbon emissions reduction ("reducción de emisiones de carbono", "emisiones de carbono")
+     - Environmental sustainability ("sostenibilidad ambiental", "sostenibilidad")
+     - Green algorithms or green AI ("algoritmos verdes", "IA verde")
+     If such measures exist → select applicable options
+     If absent → choose "No fomenta el uso de la Ia para la sostenbilidad y la lucha contra el cambio climático"
+   - Format: List all applicable options separated by commas.
+ 
+Illustrative mini-examples (derivados de proyectos reales pero redactados de forma genérica):
+   - Ejemplo 1 (ley que sólo menciona IA verde para emisiones): la norma prioriza el desarrollo de “algoritmos
+     verdes” que reduzcan el consumo energético de centros de datos de IA y alienta proyectos que contribuyan a
+     reducir emisiones de carbono en sectores productivos. → Salida:
+     **"Alienta el desarrollo y la aplicación de sistemas de IA que ayuden a reducir las emisiones de carbono"**.
+   - Ejemplo 2 (ley amplia de sostenibilidad, similar a una norma brasileña): el articulado manda a priorizar
+     el uso de energías renovables en infraestructuras de IA, promover el uso eficiente de recursos naturales
+     y apoyar proyectos de IA que contribuyan a la mitigación del cambio climático y reducción de emisiones.
+     → Salida:
+     **"Fomenta el uso de energias renovables, Optimiza el uso de recursos naturales, Contribuye a la mitigación del cambio climático, Alienta el desarrollo y la aplicación de sistemas de IA que ayuden a reducir las emisiones de carbono"**.
+   - Ejemplo 3 (ley que incorpora sostenibilidad como principio general): se establece el “bienestar social y
+     medioambiental” como principio, indicando que los sistemas de IA deben considerar sus efectos sobre el
+     medio ambiente y la sociedad a largo plazo, y se fomentan aplicaciones que reduzcan emisiones. → Salida:
+     **"Alienta el desarrollo y la aplicación de sistemas de IA que ayuden a reducir las emisiones de carbono, Fomenta el uso de energias renovables, Contribuye a la mitigación del cambio climático"**.
+   - Ejemplo 4 (ley sin medidas ambientales): la norma no menciona sostenibilidad, cambio climático, energías
+     renovables ni uso eficiente de recursos en relación con IA. → Salida:
+     **"No fomenta el uso de la Ia para la sostenbilidad y la lucha contra el cambio climático"**.
+
+Document Text:
+{{ document_text }}
+
+Based on the above taxonomy, analyze the document and identify ALL environmental sustainability measures mentioned. 
+
+Your output format should be:
+1. First line: Just the clean option names separated by commas (e.g., "Fomenta el uso de energias renovables, Alienta el desarrollo y la aplicación de sistemas de IA que ayuden a reducir las emisiones de carbono" or "No fomenta el uso de la Ia para la sostenbilidad y la lucha contra el cambio climático")
+2. Then "_____" to separate
+3. Then a detailed description explaining where each measure is mentioned in the document, including relevant article references.
+

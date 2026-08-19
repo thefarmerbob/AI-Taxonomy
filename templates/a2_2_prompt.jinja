@@ -1,0 +1,39 @@
+You are analyzing a legal document for classification type A2.2 - Enfoque Normativo.
+
+A2.2 – Enfoque Normativo
+   - Definition: Determines the regulatory approach - whether the regulation is punitive (with sanctions) or orientative (guidelines without sanctions).
+   - Options:
+       * "Punitivo" → The regulation includes sanctions, fines, penalties, or enforcement mechanisms for non-compliance.
+       * "Orientativo" → The regulation provides guidelines, recommendations, or principles without enforcement mechanisms or sanctions.
+   - Decision rule: Look for sections on "Sanciones", "Multas", "Infracciones", "Penalidades", or enforcement mechanisms.
+     If such sections exist with specific penalties → choose "Punitivo".
+     If the document only provides guidance, recommendations, or principles without sanctions → choose "Orientativo".
+   - Key indicators for Punitivo: "sanciones", "multas", "infracciones", "penalidades", "prohibición", specific penalty amounts or types
+   - Key indicators for Orientativo: "recomendaciones", "principios", "lineamientos", "orientaciones", absence of penalty sections
+ 
+Illustrative mini-examples (derivados de cuatro proyectos reales pero redactados de forma genérica):
+   - Ejemplo 1 (enfoque claramente sancionatorio, similar a una ley chilena): la norma contiene un título
+     “Confidencialidad, infracciones y sanciones” que prevé multas en unidades tributarias mensuales para
+     infracciones leves, graves y gravísimas, además de facultades de retiro del mercado de sistemas de alto
+     riesgo. → Clasifícalo como **"Punitivo"**.
+   - Ejemplo 2 (enfoque sancionatorio amplio, similar a una ley brasileña): el texto establece infracciones
+     administrativas, multas, prohibición de operar sistemas de IA y exclusión de sandboxes en caso de
+     incumplimiento de requisitos de riesgo o de derechos fundamentales. → Clasifícalo como **"Punitivo"**.
+   - Ejemplo 3 (ley orientativa de responsabilidad algorítmica, similar a un proyecto argentino): la norma
+     enuncia principios, crea consejos asesores y registros, pero no fija artículos de “Sanciones” ni cuantía
+     de multas; se limita a recomendaciones y lineamientos para buenas prácticas. → Clasifícalo como
+     **"Orientativo"**.
+   - Ejemplo 4 (ley argentina de presupuestos mínimos en IA): el articulado establece obligaciones y principios
+     generales, habla de responsabilidad y rendición de cuentas, pero no incluye un régimen detallado de multas
+     ni un capítulo de infracciones. → Clasifícalo como **"Orientativo"**.
+
+Document Text:
+{{ document_text }}
+
+Based on the above taxonomy, analyze the document and classify it as either "Punitivo" or "Orientativo". 
+
+Your output format should be:
+1. First line: Just the clean answer (e.g., "Punitivo" or "Orientativo")
+2. Then "_____" to separate
+3. Then a detailed description explaining why it is classified as such, including relevant article references and specific sanctions or guidelines mentioned.
+

@@ -1,0 +1,43 @@
+You are analyzing a legal document for classification type B3 - Desarrollo de Infraestructura.
+
+B3 – Desarrollo de Infraestructura
+   - Definition: Determines whether the document promotes investment in or development of infrastructure for AI (computing, networks, digital infrastructure).
+   - Options:
+       * "Fomenta inversión en infraestructura" → The document includes measures to promote, finance, or develop infrastructure for AI
+       * "No fomenta inversión en infraestructura" → The document does not mention infrastructure investment or development
+   - Decision rule: Look for sections mentioning:
+     - Infrastructure development ("desarrollo de infraestructura", "infraestructura digital")
+     - Infrastructure investment ("inversión en infraestructura", "financiamiento de infraestructura")
+     - Computing infrastructure ("infraestructura informática", "servidores", "centros de datos")
+     - Network infrastructure ("infraestructura de red", "conectividad")
+     - Public infrastructure provision ("provisión de infraestructura", "bienes públicos")
+     If such measures exist → choose "Fomenta inversión en infraestructura"
+     If absent → choose "No fomenta inversión en infraestructura"
+   - Key indicators: Articles mentioning infrastructure development, investment, computing resources, network infrastructure, or public infrastructure provision
+ 
+Illustrative mini-examples (derivados de proyectos reales pero redactados de forma genérica):
+   - Ejemplo 1 (ley con fuerte componente de infraestructura, similar a Brasil): la administración pública se
+     compromete a “financiar recursos físicos y tecnológicos de IA de difícil acceso para pymes y centros de
+     investigación” y a “fomentar la adopción de infraestructuras informáticas sostenibles, incluyendo centros
+     de datos y servidores de alta capacidad”. → Clasifícalo como
+     **"Fomenta inversión en infraestructura"**.
+   - Ejemplo 2 (ley que crea infraestructura digital nacional): se establece un programa para crear “plataformas
+     de cómputo de alto desempeño” y redes de conectividad específicas para proyectos de IA en todo el país.
+     → Clasifícalo como **"Fomenta inversión en infraestructura"**.
+   - Ejemplo 3 (ley de principios y derechos sin medidas de infraestructura): la norma se centra en definir
+     responsabilidades, principios éticos y mecanismos de supervisión, sin prever financiamiento ni provisión
+     de infraestructura técnica. → Clasifícalo como **"No fomenta inversión en infraestructura"**.
+   - Ejemplo 4 (proyecto que sólo modifica el código penal o de consumo): el texto introduce delitos o derechos
+     del consumidor vinculados a IA, pero no contiene artículos sobre centros de datos, redes o recursos
+     computacionales. → Clasifícalo como **"No fomenta inversión en infraestructura"**.
+
+Document Text:
+{{ document_text }}
+
+Based on the above taxonomy, analyze the document and classify it as either "Fomenta inversión en infraestructura" or "No fomenta inversión en infraestructura". 
+
+Your output format should be:
+1. First line: Just the clean answer (e.g., "Fomenta inversión en infraestructura" or "No fomenta inversión en infraestructura")
+2. Then "_____" to separate
+3. Then a detailed description explaining why it is classified as such, including relevant article references and specific infrastructure measures mentioned.
+

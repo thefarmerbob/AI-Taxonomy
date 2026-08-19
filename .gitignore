@@ -1,0 +1,28 @@
+# Secrets — never commit your API key
+.env
+.env.local
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Generated classification output and per-user progress.
+# These are your working data, not part of the app.
+outputs/
+user_progress/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Nested project with its own git history
+GIDE-LATAM-UTDT/
+
+# Unrelated leftovers from a different project (kept on disk, not part of this repo)
+opt,py
+optimization_*.png

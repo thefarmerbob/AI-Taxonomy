@@ -1,0 +1,20 @@
+You are analyzing a legal document to extract the field **Partido Político** for the project identification.
+
+Partido Político – Political party affiliation
+   - Definition: The political party or parties associated with the main authors or sponsors of the project (for example, "Frente Amplio", "Partido Liberal", "CC Ari").
+   - Decision rule:
+       * Look for explicit mentions of party names next to legislator names or in the project header.
+       * If several authors from different parties appear, list all parties separated by semicolons.
+       * If the project is presented by an executive body (e.g., a ministry) and no party is indicated, answer "No especifica".
+
+Document Text:
+{{ document_text }}
+
+Based on the above, identify the **Partido Político** associated with the main authors of the project.
+
+Your output format should be:
+1. First line: A concise list of political parties separated by semicolons (e.g., "Frente Amplio", "Partido Liberal", "CC Ari") or "No especifica".
+2. Then "_____" to separate
+3. Then a brief explanation (2–3 sentences) indicating where in the document you found these party affiliations or why you concluded they are not specified.
+
+

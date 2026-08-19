@@ -1,0 +1,44 @@
+You are analyzing a legal document for classification type C2.2 - Ciberseguridad y ciberdefensa.
+
+C2.2 – Ciberseguridad y ciberdefensa
+   - Definition: Determines whether the document promotes the development or use of AI for cybersecurity and cyberdefense purposes.
+   - Options:
+       * "Promueve el desarrollo de IA para prevenir ciberataques" → The document includes measures to develop or use AI for cybersecurity, preventing cyberattacks, or cyberdefense
+       * "No promueve el desrrollo de IA para prevenir ciberataques" → The document does not mention using AI for cybersecurity or cyberdefense
+   - Decision rule: Look for sections mentioning:
+     - Cybersecurity ("ciberseguridad", "seguridad digital", "seguridad informática")
+     - Cyberdefense ("ciberdefensa", "defensa cibernética")
+     - Prevention of cyberattacks ("prevención de ciberataques", "protección contra ataques")
+     - Security measures ("medidas de seguridad", "protección de sistemas")
+     - Use of AI for security purposes
+     If such measures exist → choose "Promueve el desarrollo de IA para prevenir ciberataques"
+     If absent → choose "No promueve el desrrollo de IA para prevenir ciberataques"
+   - Key indicators: Articles mentioning cybersecurity, cyberdefense, prevention of cyberattacks, or use of AI for security purposes
+ 
+Illustrative mini-examples (derivados de proyectos reales pero redactados de forma genérica):
+   - Ejemplo 1 (ley que impulsa IA para ciberseguridad, similar a una norma chilena): se fija como objetivo
+     “promover el desarrollo y aplicación de sistemas de IA destinados a la detección temprana de incidentes
+     de ciberseguridad y a la prevención de ciberataques contra infraestructuras críticas”. → Clasifícalo como
+     **"Promueve el desarrollo de IA para prevenir ciberataques"**.
+   - Ejemplo 2 (ley general de IA que menciona seguridad pero no IA específica para ciberataques): el texto
+     exige que los sistemas de IA sean “seguros y robustos” y adopten medidas de seguridad informática, pero no
+     promueve explícitamente el desarrollo de IA para tareas de ciberdefensa. → Clasifícalo como
+     **"No promueve el desrrollo de IA para prevenir ciberataques"**.
+   - Ejemplo 3 (proyecto de responsabilidad algorítmica): la norma se enfoca en transparencia, sesgos y
+     responsabilidad, sin abordar el uso de IA para prevenir ataques informáticos. → Clasifícalo como
+     **"No promueve el desrrollo de IA para prevenir ciberataques"**.
+   - Ejemplo 4 (modificación del código penal sobre contenidos generados por IA): el proyecto actualiza tipos
+     penales vinculados a imágenes sintéticas o violencia digital, pero no trata sobre IA aplicada a
+     ciberseguridad. → Clasifícalo como
+     **"No promueve el desrrollo de IA para prevenir ciberataques"**.
+
+Document Text:
+{{ document_text }}
+
+Based on the above taxonomy, analyze the document and classify it as either "Promueve el desarrollo de IA para prevenir ciberataques" or "No promueve el desrrollo de IA para prevenir ciberataques". 
+
+Your output format should be:
+1. First line: Just the clean answer (e.g., "Promueve el desarrollo de IA para prevenir ciberataques" or "No promueve el desrrollo de IA para prevenir ciberataques")
+2. Then "_____" to separate
+3. Then a detailed description explaining why it is classified as such, including relevant article references and specific cybersecurity measures mentioned.
+

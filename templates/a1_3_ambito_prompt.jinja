@@ -1,0 +1,51 @@
+You are analyzing a legal document for classification type A1.3 - Ámbito de aplicación: sujetos alcanzados por la regulación y excepciones.
+
+A1.3 – Ámbito de aplicación: sujetos alcanzados por la regulación y excepciones
+   - Definition: Identifies which sectors are subject to the regulation.
+   - This is a multi-select classification - the document may apply to multiple sectors.
+   - Options (select all that apply):
+       * "Sector público" → The regulation applies to public sector entities, government agencies, or public administration
+       * "Sector privado" → The regulation applies to private sector entities, companies, or private organizations
+       * "Organizaciones de la sociedad civil" → The regulation applies to civil society organizations, NGOs, or non-profit organizations
+       * "Sector académico y de investigación" → The regulation applies to academic institutions, research centers, or educational organizations
+       * "Usuarios individuales" → The regulation applies to individual users or consumers
+   - Decision rule: Identify all sectors mentioned as being subject to the regulation. Look for:
+     - References to "sector público", "administración pública", "gobierno", "estado", "entidades públicas"
+     - References to "sector privado", "empresas", "organizaciones privadas", "proveedores privados"
+     - References to "organizaciones de la sociedad civil", "ONG", "organizaciones no gubernamentales"
+     - References to "sector académico", "universidades", "centros de investigación", "instituciones educativas"
+     - References to "usuarios", "consumidores", "personas individuales", "ciudadanos"
+     - Also look at who is explicitly mentioned as being covered: proveedores, desarrolladores, operadores, importadores, distribuidores, usuarios
+   - Format: Provide TWO outputs:
+     1. First line: A clean comma-separated list of ONLY the option names (e.g., "Sector público, Sector privado" or "Usuarios individuales")
+     2. After "_____": A verbose description explaining where each sector is mentioned in the document
+ 
+Illustrative mini-examples (derivados de cuatro proyectos reales pero redactados de forma genérica):
+   - Ejemplo 1 (ley de alcance muy amplio, similar a una ley chilena general de IA):
+     el artículo de ámbito de aplicación establece que la norma rige para “los proveedores e implementadores
+     de sistemas de IA en el territorio nacional”, y también menciona a importadores, distribuidores y
+     usuarios, tanto del sector público como del sector privado, así como organizaciones de la sociedad civil
+     y entidades académicas. → Salida en la primera línea:
+     **"Sector público, Sector privado, Organizaciones de la sociedad civil, Sector académico y de investigación, Usuarios individuales"**.
+   - Ejemplo 2 (ley brasileña que cubre principalmente actores económicos y sociedad civil): el texto se aplica
+     a “personas humanas o jurídicas de derecho privado” y a organizaciones de la sociedad civil que desarrollen,
+     implementen o utilicen sistemas de IA, además de prever articulación con el poder público. → Salida:
+     **"Sector privado, Sector público, Organizaciones de la sociedad civil"**.
+   - Ejemplo 3 (ley argentina de responsabilidad algorítmica centrada en operadores y usuarios): el articulado
+     se dirige a proveedores, operadores y responsables de sistemas de IA, tanto públicos como privados, e
+     incluye a “usuarios individuales” afectados por los sistemas. → Salida:
+     **"Usuarios individuales, Sector privado, Sector público"**.
+   - Ejemplo 4 (ley argentina de presupuestos mínimos de IA con foco en innovación): el ámbito de aplicación
+     abarca empresas privadas, centros de investigación y universidades, organismos del sector público y
+     organizaciones de la sociedad civil que desarrollen o utilicen IA en el país. → Salida:
+     **"Sector privado, Sector académico y de investigación, Sector público, Organizaciones de la sociedad civil"**.
+
+Document Text:
+{{ document_text }}
+
+Based on the above taxonomy, analyze the document and identify ALL sectors that are subject to the regulation. 
+
+Your output format should be:
+1. First line: Just the clean option names separated by commas (e.g., "Sector público, Sector privado" or "Usuarios individuales")
+2. Then "_____" to separate
+3. Then a detailed description explaining where each sector is mentioned in the document, including relevant article references and specific entities covered.

@@ -1,0 +1,40 @@
+You are analyzing a legal document for classification type A3.1 - Autoridad encargada de la regulación y/o supervisión.
+
+A3.1 – Autoridad encargada de la regulación y/o supervisión
+   - Definition: Determines what type of authority is designated to regulate and/or supervise AI systems.
+   - Options:
+       * "Autoridad existente" → An existing government agency or authority is designated (e.g., existing data protection authority, existing ministry)
+       * "Nueva autoridad" → A new authority, agency, or institution is created specifically for AI regulation
+       * "No especifica" → The document does not clearly specify which authority will be responsible
+   - Decision rule: Look for sections that:
+     - Create new institutions: "Créase", "Se crea", "Se establece", "Se constituye"
+     - Designate existing authorities: References to existing ministries, agencies, or authorities by name
+     - If a new entity is created → choose "Nueva autoridad"
+     - If an existing entity is designated → choose "Autoridad existente"
+     - If unclear or not mentioned → choose "No especifica"
+   - Key indicators: Look for articles creating new agencies, ministries, or designating existing ones (e.g., "Ministerio de...", "Agencia de...", "Secretaría de...")
+ 
+Illustrative mini-examples (derivados de cuatro proyectos reales pero redactados de forma genérica):
+   - Ejemplo 1 (autoridad existente, similar a una ley chilena): la ley dispone que la supervisión de los
+     sistemas de IA de alto riesgo corresponde al Ministerio de Ciencia y a la Agencia de Protección de Datos
+     Personales, organismos ya creados por otras normas. → Clasifícalo como **"Autoridad existente"**.
+   - Ejemplo 2 (autoridad existente coordinadora, similar a una ley brasileña): se crea un “Sistema Nacional
+     de Gobernanza de IA” coordinado por la Autoridad Nacional de Protección de Datos, ya existente, sin crear
+     una nueva agencia distinta. → Clasifícalo como **"Autoridad existente"**.
+   - Ejemplo 3 (nueva autoridad de IA, similar a un proyecto argentino): el articulado indica “Créase la
+     Autoridad de Supervisión de la Inteligencia Artificial (ASIA) como organismo independiente encargado de
+     aplicar esta ley”, con composición y funciones propias. → Clasifícalo como **"Nueva autoridad"**.
+   - Ejemplo 4 (responsabilidades difusas, similar a otra ley argentina): la norma menciona que “el Poder
+     Ejecutivo determinará la autoridad competente” sin nombrar un organismo concreto ni crearlo explícitamente.
+     → Clasifícalo como **"No especifica"**.
+
+Document Text:
+{{ document_text }}
+
+Based on the above taxonomy, analyze the document and classify it as either "Autoridad existente", "Nueva autoridad", or "No especifica". 
+
+Your output format should be:
+1. First line: Just the clean answer (e.g., "Autoridad existente", "Nueva autoridad", or "No especifica")
+2. Then "_____" to separate
+3. Then a detailed description explaining why it is classified as such, including the name of the authority if mentioned and relevant article references.
+

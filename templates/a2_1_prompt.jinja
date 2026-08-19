@@ -1,0 +1,36 @@
+You are analyzing a legal document for classification type A2.1 - Ley nueva o modificatoria.
+
+A2.1 – Ley nueva o modificatoria
+   - Definition: Determines whether the document creates a completely new law or modifies an existing one.
+   - Options:
+       * "Nueva Ley" → The text introduces a new legal framework, establishes fresh articles, or creates new responsibilities.
+       * "Modificatoria" → The text amends, replaces, or updates specific provisions of a pre-existing law.
+   - Decision rule: If the text explicitly refers to "nueva ley", "creación", or new regulatory scope → choose Nueva Ley.
+     If it references "modifica", "sustituye", "reforma", or "actualiza" → choose Modificatoria.
+   - Key indicators for Nueva Ley: "crea", "establece", "nueva ley", "marco legal", new articles being introduced
+   - Key indicators for Modificatoria: "modifica", "sustituye", "reforma", "actualiza", references to existing law numbers or articles
+ 
+Illustrative mini-examples (derivados de cuatro proyectos reales pero redactados de forma genérica):
+   - Ejemplo 1 (ley marco chilena de IA): el primer artículo declara “Créase un marco legal para la regulación
+     de los sistemas de inteligencia artificial en el país” y desarrolla más de treinta artículos nuevos que
+     no se presentan como modificaciones puntuales a una ley previa. → Clasifícalo como **"Nueva Ley"**.
+   - Ejemplo 2 (proyecto brasileño de gobernanza de IA): el texto lleva la fórmula típica de proyecto de ley y
+     establece un “Sistema Nacional de Regulação e Governança de Inteligência Artificial”, sin citar artículos
+     específicos a modificar en otra norma. → Clasifícalo como **"Nueva Ley"**.
+   - Ejemplo 3 (ley argentina de responsabilidad algorítmica): en los fundamentos se habla de “establecer un
+     marco legal” para la IA y los algoritmos, y el articulado introduce requisitos y registros sin indicar
+     “modifícase el artículo…” de una ley existente. → Clasifícalo como **"Nueva Ley"**.
+   - Ejemplo 4 (ley argentina de presupuestos mínimos en IA): la norma fija principios generales, obligaciones
+     y mecanismos de responsabilidad para el desarrollo de IA en el país, siempre utilizando fórmulas del tipo
+     “Créase…”, “Establécese…” sin referirse a reformas de otra ley. → Clasifícalo como **"Nueva Ley"**.
+
+Document Text:
+{{ document_text }}
+
+Based on the above taxonomy, analyze the document and classify it as either "Nueva Ley" or "Modificatoria". 
+
+Your output format should be:
+1. First line: Just the clean answer (e.g., "Nueva Ley" or "Modificatoria")
+2. Then "_____" to separate
+3. Then a detailed description explaining why it is classified as such, including relevant article references and key indicators found.
+
