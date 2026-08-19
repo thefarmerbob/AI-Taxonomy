@@ -31,7 +31,27 @@ MAX_PARALLEL_CLASSIFICATIONS = int(os.getenv("MAX_PARALLEL_CLASSIFICATIONS", "8"
 # Run the first characteristic alone so it populates the prompt cache for the rest.
 WARM_PROMPT_CACHE = os.getenv("WARM_PROMPT_CACHE", "1") not in ("0", "false", "False")
 
-client = anthropic.Anthropic(timeout=REQUEST_TIMEOUT, max_retries=3)
+# Built on first use, not at import. Constructing it eagerly makes a missing
+# ANTHROPIC_API_KEY crash the whole module, which on a serverless host surfaces as an
+# opaque 500 with no clue as to the cause. Deferring it lets the UI load and report
+# the real problem where the user can read it.
+_CLIENT = None
+_CLIENT_LOCK = threading.Lock()
+
+
+def get_client() -> anthropic.Anthropic:
+    global _CLIENT
+    if _CLIENT is None:
+        with _CLIENT_LOCK:
+            if _CLIENT is None:
+                if not os.getenv("ANTHROPIC_API_KEY"):
+                    raise RuntimeError(
+                        "ANTHROPIC_API_KEY is not set. Locally, copy .env.example to .env "
+                        "and paste your key from console.anthropic.com. When deployed, set "
+                        "it as an environment variable on the host."
+                    )
+                _CLIENT = anthropic.Anthropic(timeout=REQUEST_TIMEOUT, max_retries=3)
+    return _CLIENT
 
 # Custom UI theme & styling (light, clean, with a subtle warm accent)
 APP_CSS = """
@@ -201,8 +221,32 @@ button.secondary, button[class*="secondary"] {
 """
 
 # User progress storage
-PROGRESS_DIR = Path(__file__).resolve().parent / "user_progress"
-PROGRESS_DIR.mkdir(exist_ok=True)
+# Where the app writes spreadsheets and progress. Serverless hosts (Vercel, Lambda)
+# ship a read-only deployment directory with only /tmp writable, so creating these
+# next to the code crashes the function at import. DATA_DIR lets the host redirect
+# them; local runs keep writing beside the code exactly as before.
+_APP_DIR = Path(__file__).resolve().parent
+_SERVERLESS = bool(os.getenv("VERCEL") or os.getenv("AWS_LAMBDA_FUNCTION_NAME"))
+DATA_DIR = Path(os.getenv("DATA_DIR") or (Path("/tmp/ai-taxonomy") if _SERVERLESS else _APP_DIR))
+
+PROGRESS_DIR = DATA_DIR / "user_progress"
+OUTPUT_DIR = DATA_DIR / "outputs"
+
+
+def ensure_dir(path: Path) -> Path:
+    """Create a directory, tolerating a read-only filesystem.
+
+    Import must never fail because of storage: a misconfigured host should still
+    serve the UI and report the problem per-request, not return a bare 500.
+    """
+    try:
+        path.mkdir(parents=True, exist_ok=True)
+    except OSError as error:
+        print(f"warning: cannot create {path}: {error}", file=sys.stderr)
+    return path
+
+
+ensure_dir(PROGRESS_DIR)
 
 def get_user_progress_file(username: str) -> Path:
     """Get the progress file path for a user."""
@@ -696,7 +740,7 @@ def get_supporting_evidence(
     )
 
     try:
-        response = client.messages.create(
+        response = get_client().messages.create(
             model=MODEL,
             # Three verbatim legal quotes plus reasons truncate well under 600.
             max_tokens=1500,
@@ -791,7 +835,7 @@ def process_prompt(
     if document_text is None:
         document_text = extract_pdf_text(document_file)
 
-    response = client.messages.create(
+    response = get_client().messages.create(
         model=MODEL,
         max_tokens=2000,
         system=SYSTEM_PROMPT,
@@ -1004,8 +1048,7 @@ def save_to_spreadsheet(results: dict, document_name: str, filename: str = None,
         filename = f"classification_results_{timestamp}.xlsx"
     
     # Ensure output directory exists
-    output_dir = Path(__file__).resolve().parent / "outputs"
-    output_dir.mkdir(exist_ok=True)
+    output_dir = ensure_dir(OUTPUT_DIR)
     
     filepath = output_dir / filename
     
@@ -1248,7 +1291,7 @@ def reset_spreadsheet(request: gr.Request) -> tuple:
     output_filename = f"{username_safe}_classifications.xlsx" if username_safe else "classifications.xlsx"
     
     # Get the filepath
-    output_dir = Path(__file__).resolve().parent / "outputs"
+    output_dir = OUTPUT_DIR
     filepath = output_dir / output_filename
     
     # Delete the Excel file if it exists
@@ -1277,7 +1320,7 @@ def load_spreadsheet_for_editor(request: gr.Request):
     
     username_safe = "".join(c for c in username if c.isalnum() or c in (' ', '-', '_')).strip()
     output_filename = f"{username_safe}_classifications.xlsx" if username_safe else "classifications.xlsx"
-    output_dir = Path(__file__).resolve().parent / "outputs"
+    output_dir = OUTPUT_DIR
     filepath = output_dir / output_filename
     
     if filepath.exists():
@@ -1314,8 +1357,7 @@ def save_spreadsheet_from_editor(df, request: gr.Request):
     
     username_safe = "".join(c for c in username if c.isalnum() or c in (' ', '-', '_')).strip()
     output_filename = f"{username_safe}_classifications.xlsx" if username_safe else "classifications.xlsx"
-    output_dir = Path(__file__).resolve().parent / "outputs"
-    output_dir.mkdir(exist_ok=True)
+    output_dir = ensure_dir(OUTPUT_DIR)
     filepath = output_dir / output_filename
     
     try:
